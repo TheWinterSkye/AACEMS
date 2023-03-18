@@ -1,0 +1,74 @@
+<!-- Online HTML, CSS and JavaScript editor to run code online. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Transport Medical Chart</title>
+</head>
+
+<body>
+  <div class="window">
+    <div class="title-bar">
+      <span class="title">Transport Medical Chart</span>
+      <span class="controls">
+        <button class="minimize">-</button>
+        <button class="maximize">&#x25A1;</button>
+        <button class="close">x</button>
+      </span>
+    </div>
+    <div class="content">
+      <h1>Select all options</h1>
+      <p>Patient Information</p>
+      
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name">
+        <br>
+        <label for="cid">CID</label>
+        <input type="text" id="cid" name="cid">
+        <label for="chart_number">Chart Number</label>
+        <input type="text" id="chart_number" name="chart_number">  
+        <br>
+        <p>Injury Code</p>
+        <input type="radio" id="injured_person" name="injury_code" value="10-47">
+        <label for="injured_person">10-47 Injured Person</label>
+        <input type="radio" id="drowning_victim" name="injury_code" value="10-32">
+        <label for="drowning_victim">10-32 Drowning Victim</label><br>
+        <input type="radio" id="motor_vehicle_accident" name="injury_code" value="10-50">
+        <label for="motor_vehicle_accident">10-50 Motor Vehicle Accident</label>
+        <input type="radio" id="gunshot_victim" name="injury_code" value="10-57">
+        <label for="gunshot_victim">10-57 Gunshot Victim</label><br> 
+        <br>
+        <p>Medication Administered</p>
+        <input type="checkbox" id="acetaminophen" name="medication[]" value="Acetaminophen 650mg">
+        <label for="acetaminophen">Acetaminophen 650mg</label><br>
+        <input type="checkbox" id="morphine" name="medication[]" value="Morphine 4mg">
+        <label for="morphine">Morphine 4mg</label><br>
+        <input type="checkbox" id="fentanyl_50mcg" name="medication[]" value="Fentanyl 50mcg">
+        <label for="fentanyl_50mcg">Fentanyl 50mcg</label><br>
+        <input type="checkbox" id="ketamine" name="medication[]" value="Ketamine 30mg">
+        <label for="ketamine">Ketamine 30mg</label><br>
+            <input type="checkbox" id="fentanyl_100mcg" name="medication[]" value="Fentanyl 100mcg">
+    <label for="fentanyl_100mcg">Fentanyl 100mcg</label><br>
+    <input type="checkbox" id="non_rebreather_mask" name="medication[]" value="Non-rebreather mask">
+    <label for="non_rebreather_mask">Non-rebreather mask</label><br>
+    <input type="checkbox" id="saline" name="medication[]" value="Saline 1 liter">
+    <label for="saline">Saline 1 liter</label><br>
+    <input type="checkbox" id="c_collar" name="medication[]" value="C-Collar">
+    <label for="c_collar">C-Collar</label><br>
+    <input type="checkbox" id="back_board" name="medication[]" value="Back Board">
+    <label for="back_board">Back Board</label><br>
+    <input type="checkbox" id="gauze_compress" name="medication[]" value="Gauze Compress">
+    <label for="gauze_compress">Gauze Compress</label><br>
+
+    <!-- Add submit button -->
+    <button id="submit_btn" type="submit">Submit</button>
+</div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

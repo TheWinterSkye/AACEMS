@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #008080;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.window {
+  background-color: #c0c0c0;
+  border: 2px solid #000;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0;
+  position: relative;
+}
+
+.title-bar {
+  background-color: #000080;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px;
+  position: sticky;
+  top: 0;
+}
+
+.title {
+  margin: 0;
+  padding: 0 4px;
+}
+
+.controls {
+  display: flex;
+}
+
+button {
+  background-color: #c0c0c0;
+  border: 1px solid #000;
+  color: #000;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 0 1px;
+  padding: 1px 4px;
+}
+
+button:hover {
+  background-color: #008080;
+  color: #fff;
+}
+
+.content {
+  padding: 8px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #000080;
+}
+
+p {
+  font-size: 16px;
+  font-weight: bold;
+}
+#first_name {
+  width: 150px;
+}
+#last_name {
+  width: 150px;
+}
+#cid {
+  width: 150px;
+}
+#chart_number {
+  width: 150px;
+}
