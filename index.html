@@ -2,83 +2,86 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Transport Medical Chart</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Transport Medical Chart</title>
+    <script src="https://apis.google.com/js/api.js"></script>
 </head>
 
 <body>
-  <div class="window">
-    <div class="title-bar">
-      <span class="title">Transport Medical Chart</span>
-      <span class="controls">
-        <button class="minimize">-</button>
-        <button class="maximize">&#x25A1;</button>
-        <button class="close">x</button>
-      </span>
+    <div class="window">
+        <div class="title-bar">
+            <span class="title">Transport Medical Chart</span>
+            <span class="controls">
+                <button class="minimize">-</button>
+                <button class="maximize">&#x25A1;</button>
+                <button class="close">x</button>
+            </span>
+        </div>
+        <div class="content">
+            <form id="form">
+                <h1>Select all options</h1>
+                <p>Patient Information</p>
+
+                <label for="patients_name">Patients name or description</label>
+                <input type="text" id="patients_name" name="patients_name">
+                <br>
+                <label for="cid">Responding Medic [callsign] Name</label>
+                <input type="text" id="cid" name="cid">
+
+                <br>
+                <p>Injury Code</p>
+                <input type="radio" id="burn_victim" name="injury_code" value="10-22">
+                <label for="burn_victim">10-22 Burn Victim</label>
+                <input type="radio" id="drowning_victim" name="injury_code" value="10-32">
+                <label for="drowning_victim">10-32 Drowning Victim</label>
+                <input type="radio" id="injured_person" name="injury_code" value="10-47">
+                <label for="injured_person">10-47 Injured Person</label>
+                <br>
+                <input type="radio" id="motor_vehicle_accident" name="injury_code" value="10-50">
+                <label for="motor_vehicle_accident">10-50 Motor Vehicle Accident</label>
+                <input type="radio" id="gunshot_victim" name="injury_code" value="10-57">
+                <label for="gunshot_victim">10-57 Gunshot Victim</label>
+                <input type="radio" id="revive_on_scene" name="injury_code" value="Revive On Scene">
+                <label for="revive_on_scene">Revive On Scene</label><br>
+                <br>
+                <br>
+                <p>Medication Administered</p>
+                <input type="checkbox" id="acetaminophen" name="medication[]" value="Acetaminophen 650mg">
+                <label for="acetaminophen">Acetaminophen 650mg</label><br>
+                <input type="checkbox" id="morphine" name="medication[]" value="Morphine 4mg">
+                <label for="morphine">Morphine 4mg</label><br>
+                <input type="checkbox" id="fentanyl_50mcg" name="medication[]" value="Fentanyl 50mcg">
+                <label for="fentanyl_50mcg">Fentanyl 50mcg</label><br>
+                <input type="checkbox" id="ketamine" name="medication[]" value="Ketamine 30mg">
+                <label for="ketamine">Ketamine 30mg</label><br>
+                <input type="checkbox" id="fentanyl_100mcg" name="medication[]" value="Fentanyl 100mcg">
+                <label for="fentanyl_100mcg">Fentanyl 100mcg</label><br>
+                <input type="checkbox" id="non_rebreather_mask" name="medication[]" value="Non-rebreather mask">
+                <label for="non_rebreather_mask">Non-rebreather mask</label><br>
+                <input type="checkbox" id="saline" name="medication[]" value="Saline 1 liter">
+                <label for="saline">Saline 1 liter</label><br>
+                <input type="checkbox" id="c_collar" name="medication[]" value="C-Collar">
+                <label for="c_collar">C-Collar</label><br>
+                <input type="checkbox" id="back_board" name="medication[]" value="Back Board">
+                <label for="back_board">Back Board</label><br>
+                <input type="checkbox" id="gauze_compress" name="medication[]" value="Gauze Compress">
+                <label for="gauze_compress">Gauze Compress</label><br>
+                <input type="checkbox" id="blood" name="medication[]" value="blood">
+                <label for="blood">Blood</label><br>
+
+                <p>Notes</p>
+                <label for="notes">Scene Notes</label>
+                <input type="text" id="notes" name="notes">
+                <br>
+
+                <!-- Add submit button -->
+                <button id="submit_btn" type="submit">Submit</button>
+            </form>
+        </div>
     </div>
-    <div class="content">
-      <h1>Select all options</h1>
-      <form id="form">
-        <p>Patient Information</p>
-        <label for="patients_name">Patients name or description</label>
-        <input type="text" id="patients_name" name="patients_name">
-        <br>
-        <label for="cid">Responding Medic [callsign] Name</label>
-        <input type="text" id="cid" name="cid">
-
-        <br>
-        <p>Injury Code</p>
-        <input type="radio" id="burn_victim" name="injury_code" value="10-22">
-        <label for="burn_victim">10-22 Burn Victim</label>
-        <input type="radio" id="drowning_victim" name="injury_code" value="10-32">
-        <label for="drowning_victim">10-32 Drowning Victim</label>
-        <input type="radio" id="injured_person" name="injury_code" value="10-47">
-        <label for="injured_person">10-47 Injured Person</label>
-        <br>
-        <input type="radio" id="motor_vehicle_accident" name="injury_code" value="10-50">
-        <label for="motor_vehicle_accident">10-50 Motor Vehicle Accident</label>
-        <input type="radio" id="gunshot_victim" name="injury_code" value="10-57">
-        <label for="gunshot_victim">10-57 Gunshot Victim</label>
-        <input type="radio" id="revive_on_scene" name="injury_code" value="Revive On Scene">
-        <label for="revive_on_scene">Revive On Scene</label><br>
-        <br>
-        <br>
-        <p>Medication Administered</p>
-        <input type="checkbox" id="acetaminophen" name="medication[]" value="Acetaminophen 650mg">
-        <label for="acetaminophen">Acetaminophen 650mg</label><br>
-        <input type="checkbox" id="morphine" name="medication[]" value="Morphine 4mg">
-        <label for="morphine">Morphine 4mg</label><br>
-        <input type="checkbox" id="fentanyl_50mcg" name="medication[]" value="Fentanyl 50mcg">
-        <label for="fentanyl_50mcg">Fentanyl 50mcg</label><br>
-        <input type="checkbox" id="ketamine" name="medication[]" value="Ketamine 30mg">
-        <label for="ketamine">Ketamine 30mg</label><br>
-        <input type="checkbox" id="fentanyl_100mcg" name="medication[]" value="Fentanyl 100mcg">
-<label for="fentanyl_100mcg">Fentanyl 100mcg</label><br>
-<input type="checkbox" id="non_rebreather_mask" name="medication[]" value="Non-rebreather mask">
-<label for="non_rebreather_mask">Non-rebreather mask</label><br>
-<input type="checkbox" id="saline" name="medication[]" value="Saline 1 liter">
-<label for="saline">Saline 1 liter</label><br>
-<input type="checkbox" id="c_collar" name="medication[]" value="C-Collar">
-<label for="c_collar">C-Collar</label><br>
-<input type="checkbox" id="back_board" name="medication[]" value="Back Board">
-<label for="back_board">Back Board</label><br>
-<input type="checkbox" id="gauze_compress" name="medication[]" value="Gauze Compress">
-<label for="gauze_compress">Gauze Compress</label><br>
-<input type="checkbox" id="blood" name="medication[]" value="blood">
-<label for="blood">Blood</label><br>
-
-<p>Notes</p>
-<label for="notes">Scene Notes</label>
-<input type="text" id="notes" name="notes">
-<br>
-<!-- Add submit button -->
-<button id="submit_btn" type="submit">Submit</button>
-
-</form>
-</div>
-</div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
