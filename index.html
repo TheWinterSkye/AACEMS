@@ -7,13 +7,6 @@
     <link rel="stylesheet" href="style.css" />
     <title>Transport Medical Chart</title>
     <script src="https://apis.google.com/js/api.js"></script>
-    <script>
-  window.addEventListener('message', (event) => {
-    if (event.source === window.opener) {
-      window.opener.postMessage(event.data, event.origin);
-    }
-  });
-</script>
 </head>
 
 <body>
@@ -62,7 +55,7 @@
                 <input type="checkbox" id="fentanyl_50mcg" name="medication[]" value="Fentanyl 50mcg">
                 <label for="fentanyl_50mcg">Fentanyl 50mcg</label><br>
                 <input type="checkbox" id="ketamine" name="medication[]" value="Ketamine 30mg">
-                <label for="ketamine">Ketamine 30mg</label><br>
+                                <label for="ketamine">Ketamine 30mg</label><br>
                 <input type="checkbox" id="fentanyl_100mcg" name="medication[]" value="Fentanyl 100mcg">
                 <label for="fentanyl_100mcg">Fentanyl 100mcg</label><br>
                 <input type="checkbox" id="non_rebreather_mask" name="medication[]" value="Non-rebreather mask">
@@ -92,3 +85,4 @@
 </body>
 
 </html>
+
