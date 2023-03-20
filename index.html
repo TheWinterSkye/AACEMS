@@ -23,25 +23,28 @@
       <h1>Select all options</h1>
       <p>Patient Information</p>
       
-        <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="first_name">
-        <label for="last_name">Last Name</label>
-        <input type="text" id="last_name" name="last_name">
+        <label for="patients_name">Patients name or description</label>
+        <input type="text" id="patients_name" name="patients_name">
         <br>
-        <label for="cid">CID</label>
+        <label for="cid">Responding Medic [callsign] Name</label>
         <input type="text" id="cid" name="cid">
-        <label for="chart_number">Chart Number</label>
-        <input type="text" id="chart_number" name="chart_number">  
+
         <br>
         <p>Injury Code</p>
+        <input type="radio" id="burn_victim" name="injury_code" value="10-22">
+        <label for="burn_victim">10-22 Burn Victim</label> 
+         <input type="radio" id="drowning_victim" name="injury_code" value="10-32">
+        <label for="drowning_victim">10-32 Drowning Victim</label>  
         <input type="radio" id="injured_person" name="injury_code" value="10-47">
         <label for="injured_person">10-47 Injured Person</label>
-        <input type="radio" id="drowning_victim" name="injury_code" value="10-32">
-        <label for="drowning_victim">10-32 Drowning Victim</label><br>
+        <br>
         <input type="radio" id="motor_vehicle_accident" name="injury_code" value="10-50">
         <label for="motor_vehicle_accident">10-50 Motor Vehicle Accident</label>
         <input type="radio" id="gunshot_victim" name="injury_code" value="10-57">
-        <label for="gunshot_victim">10-57 Gunshot Victim</label><br> 
+        <label for="gunshot_victim">10-57 Gunshot Victim</label>
+        <input type="radio" id="revive_on_scene" name="injury_code" value="Revive On Scene">
+        <label for="revive_on_scene">Revive On Scene</label><br> 
+        <br> 
         <br>
         <p>Medication Administered</p>
         <input type="checkbox" id="acetaminophen" name="medication[]" value="Acetaminophen 650mg">
@@ -64,6 +67,10 @@
     <label for="back_board">Back Board</label><br>
     <input type="checkbox" id="gauze_compress" name="medication[]" value="Gauze Compress">
     <label for="gauze_compress">Gauze Compress</label><br>
+      <p>Notes</p>
+      <label for="notes">Scene Notes</label>
+      <input type="text" id="notes" name="notes">
+        <br>
 
     <!-- Add submit button -->
     <button id="submit_btn" type="submit">Submit</button>
