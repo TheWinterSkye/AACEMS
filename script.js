@@ -1,8 +1,8 @@
 // Replace with your own client ID and client secret
-const CLIENT_ID = 'your-client-id';
-const CLIENT_SECRET = 'your-client-secret';
+const CLIENT_ID = '466955074065-bbu0i5sb3aqrnjm6e6k3jd2lq39hpahs.apps.googleusercontent.com';
+const CLIENT_SECRET = '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';
 const SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
-const REDIRECT_URI = 'your-redirect-uri';
+const REDIRECT_URI = 'https://spectacular-daifuku-b382f4.netlify.app/';
 
 const form = document.getElementById('form');
 const submitBtn = document.getElementById('submit_btn');
