@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css" />
     <title>Transport Medical Chart</title>
     <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+  window.addEventListener('message', (event) => {
+    if (event.source === window.opener) {
+      window.opener.postMessage(event.data, event.origin);
+    }
+  });
+</script>
 </head>
 
 <body>
