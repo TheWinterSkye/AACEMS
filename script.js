@@ -5,9 +5,9 @@ const submitBtn = document.getElementById('submit_btn');
 
 // Function to send data to Google Sheet
 async function sendDataToGoogleSheet(data) {
-  const spreadsheetId = '1MeEk6IUBWZwP8fNwcOKkF6ZhIyKscV_l6gVd8Derih0';
-  const sheetName = 'EMSTRANSPORTCHARTS';
-  const range = 'EMSTRANSPORTCHARTS!A:F';
+  const spreadsheetId = '1jtLnv4rQrIowGNmfulONS0HSY1Il2eu-pv0DIko6H3g';
+  const sheetName = 'sheet';
+  const range = 'sheet!A:F';
 
   await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}:append?key=${API_KEY}`, {
     method: 'POST',
