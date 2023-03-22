@@ -83,8 +83,8 @@
             
         </div>
     </div>
-    <script>
-    async function submitForm(event) {
+   <script>
+async function submitForm(event) {
   event.preventDefault();
 
   const apiUrl = 'https://sheetdb.io/api/v1/amxeepufjfzvc';
@@ -122,6 +122,8 @@
       alert('Form submitted successfully');
       form.reset();
     } else {
+      const errorData = await response.json();
+      console.error('Error data:', errorData);
       alert('Error submitting form');
     }
   } catch (error) {
@@ -129,7 +131,8 @@
     alert('Error submitting form');
   }
 }
-    </script>
+</script>
+
 </body>
 
 </html>
