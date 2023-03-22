@@ -99,10 +99,9 @@ async function submitForm(event) {
     medication.push(value);
   });
 
-  // Set the current date and time in the "date" field
+  // Get the current date and time
   const currentDate = new Date();
   const dateTimeString = currentDate.toLocaleString();
-  formData.set('date', dateTimeString);
 
   const data = {
     "data": [
@@ -112,7 +111,7 @@ async function submitForm(event) {
         "injury_code": formData.get('injury_code'),
         "medication": medication.join(', '),
         "notes": formData.get('notes'),
-        "date": formData.get('date') // Add the date field to the data object
+        "date": dateTimeString // Set the date field directly in the data object
       }
     ]
   };
