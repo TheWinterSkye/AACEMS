@@ -7,7 +7,7 @@ const submitBtn = document.getElementById('submit_btn');
 async function sendDataToGoogleSheet(data) {
   const spreadsheetId = '1MeEk6IUBWZwP8fNwcOKkF6ZhIyKscV_l6gVd8Derih0';
   const sheetName = 'EMS TRANSPORT CHARTS';
-  const range = `${sheetName}!A:F`;
+  const range = `${EMS TRANSPORT CHARTS}!A:F`;
 
   await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}:append?key=${API_KEY}`, {
     method: 'POST',
