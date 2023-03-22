@@ -1,7 +1,7 @@
 async function submitForm(event) {
   event.preventDefault();
 
-  const apiUrl = 'YOUR_SHEETDB_API_URL';
+  const apiUrl = 'https://sheetdb.io/api/v1/amxeepufjfzvc';
 
   const form = document.getElementById('form');
   const formData = new FormData(form);
