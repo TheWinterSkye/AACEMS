@@ -1,81 +1,51 @@
-* {
-  box-sizing: border-box;
-}
+      body {
+        font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        background-color: #36393F;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
 
-body {
-  background-color: #008080;
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
+      form {
+        background-color: #2F3136;
+        border-radius: 5px;
+        padding: 15px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+      }
 
-.window {
-  background-color: #c0c0c0;
-  border: 2px solid #000;
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 0;
-  position: relative;
-}
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
 
-.title-bar {
-  background-color: #000080;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2px 4px;
-  position: sticky;
-  top: 0;
-}
+      input[type="text"] {
+        background-color: #40444B;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        padding: 5px;
+        margin-bottom: 15px;
+        font-family: inherit;
+      }
 
-.title {
-  margin: 0;
-  padding: 0 4px;
-}
+      button {
+        background-color: #7289DA;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        padding: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+      }
 
-.controls {
-  display: flex;
-}
-
-button {
-  background-color: #c0c0c0;
-  border: 1px solid #000;
-  color: #000;
-  cursor: pointer;
-  font-size: 12px;
-  margin: 0 1px;
-  padding: 1px 4px;
-}
-
-button:hover {
-  background-color: #008080;
-  color: #fff;
-}
-
-.content {
-  padding: 8px;
-}
-
-h1 {
-  font-size: 24px;
-  color: #000080;
-}
-
-p {
-  font-size: 16px;
-  font-weight: bold;
-}
-#first_name {
-  width: 150px;
-}
-#last_name {
-  width: 150px;
-}
-#cid {
-  width: 150px;
-}
-#chart_number {
-  width: 150px;
-}
+      button:hover {
+        background-color: #677BC4;
+      }
