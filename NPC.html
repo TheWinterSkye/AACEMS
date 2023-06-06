@@ -4,7 +4,7 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    background-color: #181818;
+    background-color: #0B3042;
     color: #F0F0F0;
     padding: 20px;
 }
@@ -22,7 +22,7 @@ body {
 .image-container {
     text-align: center;
     padding: 20px;
-    background-color: #282828;
+    background-color: #163F54;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     flex: 0 0 auto;
@@ -36,11 +36,10 @@ body {
 
 .distinction,
 .die-rating {
-    border-radius: 50%;
     padding: 5px;
     margin: 5px;
     display: inline-block;
-    background-color: #282828;
+    background-color: #163F54;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #F0F0F0;
 }
@@ -52,7 +51,7 @@ h1, h2 {
 }
 
 .container > div {
-    background-color: #282828;
+    background-color: #163F54;
     margin: 10px;
     padding: 20px;
     border-radius: 10px;
@@ -60,7 +59,7 @@ h1, h2 {
 }
 
 button {
-    background-color: #4C6E91;
+    background-color: #266488;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -75,7 +74,7 @@ button {
 }
 
 button:hover {
-    background-color: #6682B3;
+    background-color: #3981A6;
 }
 
 input, select {
@@ -83,7 +82,7 @@ input, select {
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #444;
-    background-color: #282828;
+    background-color: #163F54;
     color: #F0F0F0;
 }
 
@@ -103,8 +102,8 @@ input, select {
 #die-ratings {
     word-wrap: break-word;
 }
-</style>
 
+</style>
 </head>
 <body>
     <div class="content">
@@ -142,7 +141,6 @@ input, select {
                     <option>D4</option>
                     <option>D6</option>
                     <option>D8</option>
-                    <option>D8/D4</option>
                     <option>D10</option>
                     <option>D12</option>
                 </select>
@@ -156,6 +154,10 @@ input, select {
 function updateTitle() {
     const title = document.getElementById('title');
     const titleInput = document.getElementById('title-input');
+    if (titleInput.value.trim() === '') {
+        alert('Please enter a title');
+        return;
+    }
     title.innerText = titleInput.value;
     titleInput.style.display = 'none';
     titleInput.nextElementSibling.style.display = 'none';
@@ -163,24 +165,38 @@ function updateTitle() {
 
 function submitItem(itemType) {
     const itemInput = document.getElementById(`${itemType}-input`);
-    const itemRatingInput = document.getElementById(`${itemType}-rating-input`);
     const items = document.getElementById(`${itemType}s`);
+    if (itemInput.value.trim() === '') {
+        alert('Please enter a value');
+        return;
+    }
     const item = document.createElement('span');
     item.className = itemType;
     item.innerText = itemInput.value;
-    const itemRating = document.createElement('span');
-    itemRating.className = `${itemType}-rating die-rating`;
-    itemRating.innerText = itemRatingInput ? itemRatingInput.value : '';
     items.append(item);
-    items.append(itemRating);
+    if (itemType === 'distinction') {
+        const itemRatingInput = document.getElementById(`${itemType}-rating-input`);
+        if (itemRatingInput.value === '') {
+            alert('Please select a rating');
+            return;
+        }
+        const itemRating = document.createElement('span');
+        itemRating.className = `${itemType}-rating die-rating`;
+        itemRating.innerText = itemRatingInput.value;
+        items.append(itemRating);
+        itemRatingInput.value = '';
+    }
     items.append(document.createElement('br')); // New line
     itemInput.value = '';
-    itemRatingInput.value = '';
 }
 
 function updateImage() {
     const imageUrlInput = document.getElementById('image-url-input');
     const characterImage = document.getElementById('character-image');
+    if (imageUrlInput.value.trim() === '') {
+        alert('Please enter an image URL');
+        return;
+    }
     characterImage.src = imageUrlInput.value;
     imageUrlInput.style.display = 'none';
     imageUrlInput.nextElementSibling.style.display = 'none';
@@ -200,8 +216,9 @@ function completeCharacter() {
         buttons[i].style.display = 'none';
     }
 }
-</script>
 
+
+</script>
 
 </body>
 </html>
