@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181818;
+    color: #F0F0F0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto;
+}
+
+.image-container img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.distinction,
+.die-rating {
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+    background-color: #282828;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #F0F0F0; /* added border */
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+}
+
+#title-container,
+.container > div {
+    background-color: #282828;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #4C6E91;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6682B3;
+}
+
+input, select {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #282828;
+    color: #F0F0F0;
+}
+
+#distinctions > .distinction,
+#distinctions > .die-rating,
+#die-ratings > .die-rating {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.container > div {
+    flex: 1;
+    min-width: 0;
+}
+
+#distinctions,
+#die-ratings {
+    word-wrap: break-word;
+}
+
+</style>
+
+
+
+
+</head>
+<body>
+<div id="title-container">
+    <input type="text" id="title-input" placeholder="Enter character sheet title" />
+    <button onclick="updateTitle()">Submit</button>
+    <h1 id="title"></h1>
+</div>
+
+    <h1 id="title"></h1>
+
+    <div class="container">
+        <div>
+            <input type="text" id="distinction-input" placeholder="Enter a distinction" />
+            <select id="die-rating-input">
+                <option>NA</option>
+                <option>D4</option>
+                <option>D6</option>
+                <option>D8</option>
+                <option>D10</option>
+                <option>D12</option>
+            </select>
+            <button onclick="submitDistinction()">Submit</button>
+
+            <div id="distinctions"></div>
+        </div>
+
+        <div class="image-container">
+            <img id="character-image" src="https://cdn.discordapp.com/attachments/1100801661557035088/1112347507394084864/042558d514fe4e99bbb7258aa27f1d6c.png" alt="Default character image" />
+            <input type="text" id="image-url-input" placeholder="Enter image URL" />
+            <button onclick="updateImage()">Submit</button>
+        </div>
+
+        <div>
+            <select id="die-rating-input-right">
+                <option>NA</option>
+                <option>D4</option>
+                <option>D6</option>
+                <option>D8</option>
+                <option>D10</option>
+                <option>D12</option>
+            </select>
+            <button onclick="submitDieRating()">Submit</button>
+
+            <div id="die-ratings"></div>
+        </div>
+    </div>
+
+     <script>
+        function updateTitle() {
+            const title = document.getElementById('title');
+            const titleInput = document.getElementById('title-input');
+            title.innerText = titleInput.value;
+            titleInput.style.display = 'none';
+            titleInput.nextElementSibling.style.display = 'none';
+        }
+
+    function submitDistinction() {
+        const distinctionInput = document.getElementById('distinction-input');
+        const dieRatingInput = document.getElementById('die-rating-input');
+        const distinctions = document.getElementById('distinctions');
+        const distinction = document.createElement('span');
+        distinction.className = 'distinction';
+        distinction.innerText = distinctionInput.value;
+        const dieRating = document.createElement('span');
+        dieRating.className = 'die-rating';
+        dieRating.innerText = dieRatingInput.value;
+        distinctions.append(distinction);
+        distinctions.append(dieRating);
+        distinctions.append(document.createElement('br')); // New line
+    }
+
+        function updateImage() {
+            const imageUrlInput = document.getElementById('image-url-input');
+            const characterImage = document.getElementById('character-image');
+            characterImage.src = imageUrlInput.value;
+            imageUrlInput.style.display = 'none';
+            imageUrlInput.nextElementSibling.style.display = 'none';
+        }
+
+        function submitDieRating() {
+            const dieRatingInputRight = document.getElementById('die-rating-input-right');
+            const dieRatings = document.getElementById('die-ratings');
+            const dieRating = document.createElement('span');
+            dieRating.className = 'die-rating';
+            dieRating.innerText = dieRatingInputRight.value;
+            dieRatings.append(dieRating);
+        }
+    </script>
+</body>
+</html>
