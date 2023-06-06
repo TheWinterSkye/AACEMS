@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+    <style>
 body {
     font-family: Arial, sans-serif;
     background-color: #181818;
     color: #F0F0F0;
     padding: 20px;
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .container {
@@ -40,13 +45,12 @@ body {
     border: 1px solid #F0F0F0; /* added border */
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     padding: 20px;
     font-size: 2em;
 }
 
-#title-container,
 .container > div {
     background-color: #282828;
     margin: 10px;
@@ -99,99 +103,88 @@ input, select {
 #die-ratings {
     word-wrap: break-word;
 }
-
 </style>
-
-
-
 
 </head>
 <body>
-<div id="title-container">
-    <input type="text" id="title-input" placeholder="Enter character sheet title" />
-    <button onclick="updateTitle()">Submit</button>
-    <h1 id="title"></h1>
-</div>
+    <div class="content">
+        <div class="container">
+            <div>
+                <h2>Distinctions</h2>
+                <input type="text" id="distinction-input" placeholder="Enter a distinction" />
+                <select id="distinction-rating-input">
+                    <option>NA</option>
+                    <option>D4</option>
+                    <option>D6</option>
+                    <option>D8</option>
+                    <option>D10</option>
+                    <option>D12</option>
+                    <option>D8/D4</option>
+                </select>
+                <button onclick="submitItem('distinction')">Submit</button>
+                <div id="distinctions"></div>
+            </div>
 
-    <h1 id="title"></h1>
+            <div class="image-container">
+                <input type="text" id="title-input" placeholder="Enter character sheet title" />
+                <button onclick="updateTitle()">Submit</button>
+                <h1 id="title"></h1>
+                <img id="character-image" src="https://cdn.discordapp.com/attachments/1100801661557035088/1112347507394084864/042558d514fe4e99bbb7258aa27f1d6c.png" alt="Default character image" />
+                <input type="text" id="image-url-input" placeholder="Enter image URL" />
+                <button onclick="updateImage()">Submit</button>
+            </div>
 
-    <div class="container">
-        <div>
-            <input type="text" id="distinction-input" placeholder="Enter a distinction" />
-            <select id="die-rating-input">
-                <option>NA</option>
-                <option>D4</option>
-                <option>D6</option>
-                <option>D8</option>
-                <option>D10</option>
-                <option>D12</option>
-            </select>
-            <button onclick="submitDistinction()">Submit</button>
-
-            <div id="distinctions"></div>
-        </div>
-
-        <div class="image-container">
-            <img id="character-image" src="https://cdn.discordapp.com/attachments/1100801661557035088/1112347507394084864/042558d514fe4e99bbb7258aa27f1d6c.png" alt="Default character image" />
-            <input type="text" id="image-url-input" placeholder="Enter image URL" />
-            <button onclick="updateImage()">Submit</button>
-        </div>
-
-        <div>
-            <select id="die-rating-input-right">
-                <option>NA</option>
-                <option>D4</option>
-                <option>D6</option>
-                <option>D8</option>
-                <option>D10</option>
-                <option>D12</option>
-            </select>
-            <button onclick="submitDieRating()">Submit</button>
-
-            <div id="die-ratings"></div>
+            <div>
+                <h2>Life Dice</h2>
+                <select id="die-rating-input">
+                    <option>NA</option>
+                    <option>D4</option>
+                    <option>D6</option>
+                    <option>D8</option>
+                    <option>D10</option>
+                    <option>D12</option>
+                    <option>D8/D4</option>
+                </select>
+                <button onclick="submitItem('die-rating')">Submit</button>
+                <div id="die-ratings"></div>
+            </div>
         </div>
     </div>
+<script>
+function updateTitle() {
+    const title = document.getElementById('title');
+    const titleInput = document.getElementById('title-input');
+    title.innerText = titleInput.value;
+    titleInput.style.display = 'none';
+    titleInput.nextElementSibling.style.display = 'none';
+}
 
-     <script>
-        function updateTitle() {
-            const title = document.getElementById('title');
-            const titleInput = document.getElementById('title-input');
-            title.innerText = titleInput.value;
-            titleInput.style.display = 'none';
-            titleInput.nextElementSibling.style.display = 'none';
-        }
-
-    function submitDistinction() {
-        const distinctionInput = document.getElementById('distinction-input');
-        const dieRatingInput = document.getElementById('die-rating-input');
-        const distinctions = document.getElementById('distinctions');
-        const distinction = document.createElement('span');
-        distinction.className = 'distinction';
-        distinction.innerText = distinctionInput.value;
-        const dieRating = document.createElement('span');
-        dieRating.className = 'die-rating';
-        dieRating.innerText = dieRatingInput.value;
-        distinctions.append(distinction);
-        distinctions.append(dieRating);
-        distinctions.append(document.createElement('br')); // New line
+function submitItem(itemType) {
+    const itemInput = document.getElementById(`${itemType}-input`);
+    const itemRatingInput = document.getElementById(`${itemType}-rating-input`);
+    const items = document.getElementById(`${itemType}s`);
+    const item = document.createElement('span');
+    item.className = itemType;
+    item.innerText = itemInput.value;
+    items.append(item);
+    if (itemRatingInput && itemRatingInput.value !== 'NA') {
+        const itemRating = document.createElement('span');
+        itemRating.className = 'die-rating';
+        itemRating.innerText = itemRatingInput.value;
+        items.append(itemRating);
     }
+    items.append(document.createElement('br')); // New line
+}
 
-        function updateImage() {
-            const imageUrlInput = document.getElementById('image-url-input');
-            const characterImage = document.getElementById('character-image');
-            characterImage.src = imageUrlInput.value;
-            imageUrlInput.style.display = 'none';
-            imageUrlInput.nextElementSibling.style.display = 'none';
-        }
+function updateImage() {
+    const imageUrlInput = document.getElementById('image-url-input');
+    const characterImage = document.getElementById('character-image');
+    characterImage.src = imageUrlInput.value;
+    imageUrlInput.style.display = 'none';
+    imageUrlInput.nextElementSibling.style.display = 'none';
+}
+</script>
 
-        function submitDieRating() {
-            const dieRatingInputRight = document.getElementById('die-rating-input-right');
-            const dieRatings = document.getElementById('die-ratings');
-            const dieRating = document.createElement('span');
-            dieRating.className = 'die-rating';
-            dieRating.innerText = dieRatingInputRight.value;
-            dieRatings.append(dieRating);
-        }
-    </script>
+
 </body>
 </html>
