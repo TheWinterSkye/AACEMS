@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
+<style>
 body {
     font-family: Arial, sans-serif;
     background-color: #181818;
@@ -42,7 +42,7 @@ body {
     display: inline-block;
     background-color: #282828;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #F0F0F0; /* added border */
+    border: 1px solid #F0F0F0;
 }
 
 h1, h2 {
@@ -117,9 +117,9 @@ input, select {
                     <option>D4</option>
                     <option>D6</option>
                     <option>D8</option>
+                    <option>D8/D4</option>
                     <option>D10</option>
                     <option>D12</option>
-                    <option>D8/D4</option>
                 </select>
                 <button onclick="submitItem('distinction')">Submit</button>
                 <div id="distinctions"></div>
@@ -132,6 +132,7 @@ input, select {
                 <img id="character-image" src="https://cdn.discordapp.com/attachments/1100801661557035088/1112347507394084864/042558d514fe4e99bbb7258aa27f1d6c.png" alt="Default character image" />
                 <input type="text" id="image-url-input" placeholder="Enter image URL" />
                 <button onclick="updateImage()">Submit</button>
+                <button onclick="completeCharacter()">Complete Character</button>
             </div>
 
             <div>
@@ -141,15 +142,16 @@ input, select {
                     <option>D4</option>
                     <option>D6</option>
                     <option>D8</option>
+                    <option>D8/D4</option>
                     <option>D10</option>
                     <option>D12</option>
-                    <option>D8/D4</option>
                 </select>
                 <button onclick="submitItem('die-rating')">Submit</button>
                 <div id="die-ratings"></div>
             </div>
         </div>
     </div>
+
 <script>
 function updateTitle() {
     const title = document.getElementById('title');
@@ -166,14 +168,14 @@ function submitItem(itemType) {
     const item = document.createElement('span');
     item.className = itemType;
     item.innerText = itemInput.value;
+    const itemRating = document.createElement('span');
+    itemRating.className = `${itemType}-rating die-rating`;
+    itemRating.innerText = itemRatingInput ? itemRatingInput.value : '';
     items.append(item);
-    if (itemRatingInput && itemRatingInput.value !== 'NA') {
-        const itemRating = document.createElement('span');
-        itemRating.className = 'die-rating';
-        itemRating.innerText = itemRatingInput.value;
-        items.append(itemRating);
-    }
+    items.append(itemRating);
     items.append(document.createElement('br')); // New line
+    itemInput.value = '';
+    itemRatingInput.value = '';
 }
 
 function updateImage() {
@@ -182,6 +184,21 @@ function updateImage() {
     characterImage.src = imageUrlInput.value;
     imageUrlInput.style.display = 'none';
     imageUrlInput.nextElementSibling.style.display = 'none';
+}
+
+function completeCharacter() {
+    const inputs = document.getElementsByTagName('input');
+    const selects = document.getElementsByTagName('select');
+    const buttons = document.getElementsByTagName('button');
+    for(let i=0; i<inputs.length; i++) {
+        inputs[i].style.display = 'none';
+    }
+    for(let i=0; i<selects.length; i++) {
+        selects[i].style.display = 'none';
+    }
+    for(let i=0; i<buttons.length; i++) {
+        buttons[i].style.display = 'none';
+    }
 }
 </script>
 
