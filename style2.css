@@ -1,0 +1,68 @@
+body {
+    background: url('https://cdn.discordapp.com/attachments/1114588752099160154/1116167767322800199/OIG.png') no-repeat center center fixed; 
+    background-size: 80% auto;
+    color: #ddd;
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.section {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border: 2px solid #888;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.section h2, .section h3 {
+    text-shadow: 2px 2px 2px #000;
+}
+
+.section input {
+    width: 100%;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Additional CSS for new elements */
+#character-pic {
+    width: 100%; /* Or any width you'd like */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#pic-form {
+    margin-bottom: 10px;
+}
+
+#pic-form input[type="text"] {
+    margin-bottom: 10px;
+}
+
+#pic-form button {
+    background-color: #7289DA;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#pic-form button:hover {
+    background-color: #677BC4;
+}
