@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello, World!</title>
-  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-  <script defer src="https://pyscript.net/alpha/pyscript.js%22%3E</script>
-  </head>
-  <body>
-<div id="main">
-  <p id="counter-target">Some Placeholder Text</p>
-  <py-button pys-onclick="add_one">
-  </py-button>
-  <div id="output">Outputs here</div>
-  </div>
-<py-script>
-Define a global variable
-global_vars = {"internalCounter": 1}
-
-Define a function to increment the counter and update the output
-def add_one (event):
-  pyscript.write ("output", str (global_vars ['internalCounter']), False)
-  global_vars ['internalCounter'] += 1
-</py-script>
-  </body>
+<html>
+<head>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+  <py-script>
+    print ('Hello, World!')
+  </py-script>
+</body>
 </html>
