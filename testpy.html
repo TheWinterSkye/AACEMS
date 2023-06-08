@@ -4,8 +4,10 @@
   <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
+  <label id="hello"></label>
   <py-script>
-    print ('Hello, World!')
+    from pyscript import Element
+    Element("hello").element.innerText = "Hello, World!"
   </py-script>
 </body>
 </html>
