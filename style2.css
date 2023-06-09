@@ -44,7 +44,7 @@ body {
     height: 300px; /* adjust as needed */
 }
 
-input[type="text"], button, p {
+.output {
     color: yellow;
-    text-shadow: 2px 2px red;
+    text-shadow: 2px 2px 2px red;
 }
