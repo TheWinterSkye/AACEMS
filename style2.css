@@ -40,6 +40,12 @@ body {
 #characterImage {
     object-fit: cover;
     border-radius: 10px;
-    width: 200px; /* adjust as needed */
-    height: 200px; /* adjust as needed */
+    width: 300px; /* adjust as needed */
+    height: 300px; /* adjust as needed */
 }
+
+#nameOutput, #pronounOutput, #highConceptOutput, #skillsOutput, #stuntsOutput, #refreshOutput, #fatePointsOutput, #physicalStressOutput, #mentalStressOutput, #consequencesOutput {
+    color: yellow;
+    text-shadow: 2px 2px red;
+}
+
