@@ -1,95 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style2.css">
-<script src="script.js"></script>
+    <title>Fate Condensed Character Sheet</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
 </head>
 <body>
-<div class="container">
-    <div class="section">
-        <h2>Name</h2>
-        <input id="nameInput" type="text" />
-        <button onclick="printInput('nameInput', 'nameOutput')">Submit</button>
-        <p id="nameOutput" class="output"></p>
-    </div>
-    <div class="section">
-        <h2>Pronoun</h2>
-        <input id="pronounInput" type="text" />
-        <button onclick="printInput('pronounInput', 'pronounOutput')">Submit</button>
-        <p id="pronounOutput" class="output"></p>
-    </div>
-    <div class="section">
-        <h2>Character Picture</h2>
-        <img id="characterImage" src="https://cdn.discordapp.com/attachments/1114588752099160154/1116167767322800199/OIG.png" />
-        <input id="imageURL" type="text" placeholder="Enter a new image URL" />
-        <button onclick="updateImage()">Submit</button>
-    </div>
-<div class="section">
-    <h2>Aspects</h2>
-    <h3>High Concept</h3>
-    <input id="highConceptInput" type="text" />
-    <button onclick="printInput('highConceptInput', 'highConceptOutput')">Submit</button>
-    <p id="highConceptOutput" class="output"></p>
+    <div class="container">
+        <header>
+            <h1>Fate Condensed Character Sheet</h1>
+        </header>
+        
+        <form id="characterSheet">
+            <div class="section">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                
+                <label for="pronoun">Pronoun</label>
+                <input type="text" id="pronoun" name="pronoun">
+            </div>
 
-<h3>Trouble</h3>
-<input id="troubleInput" type="text" />
-<button onclick="printInput('troubleInput', 'troubleOutput')">Submit</button>
-<p id="troubleOutput" class="output"></p>
+            <div class="section">
+                <h2>Aspects</h2>
 
-<h3>Aspect</h3>
-<input id="aspect1Input" type="text" />
-<button onclick="printInput('aspect1Input', 'aspect1Output')">Submit</button>
-<p id="aspect1Output" class="output"></p>
+                <label for="highConcept">High Concept</label>
+                <input type="text" id="highConcept" name="highConcept">
 
-<h3>Aspect</h3>
-<input id="aspect2Input" type="text" />
-<button onclick="printInput('aspect2Input', 'aspect2Output')">Submit</button>
-<p id="aspect2Output" class="output"></p>
+                <label for="trouble">Trouble</label>
+                <input type="text" id="trouble" name="trouble">
 
-<h3>Aspect</h3>
-<input id="aspect3Input" type="text" />
-<button onclick="printInput('aspect3Input', 'aspect3Output')">Submit</button>
-<p id="aspect3Output" class="output"></p>
+                <label for="relationship">Relationship</label>
+                <input type="text" id="relationship" name="relationship">
 
-    <div class="section">
-        <h2>Skills</h2>
-        <input id="skillsInput" type="text" />
-        <button onclick="addSkill()">Submit</button>
-        <p id="skillsOutput"></p>
+                <label for="aspect1">Aspect 1</label>
+                <input type="text" id="aspect1" name="aspect1">
+
+                <label for="aspect2">Aspect 2</label>
+                <input type="text" id="aspect2" name="aspect2">
+            </div>
+
+            <div class="section">
+                <h2>Stunts</h2>
+                <textarea id="stunts" name="stunts"></textarea>
+            </div>
+
+            <div class="section">
+                <label for="refresh">Refresh</label>
+                <input type="number" id="refresh" name="refresh">
+
+                <label for="fatePoints">Fate Points</label>
+                <input type="number" id="fatePoints" name="fatePoints">
+            </div>
+
+            <div class="section">
+                <h2>Vitals</h2>
+                <label for="physicalStress">Physical Stress</label>
+                <input type="text" id="physicalStress" name="physicalStress">
+
+                <label for="mentalStress">Mental Stress</label>
+                <input type="text" id="mentalStress" name="mentalStress">
+
+                <label for="consequences">Consequences</label>
+                <input type="text" id="consequences" name="consequences">
+            </div>
+
+            <div class="section">
+                <h2>Skills</h2>
+                <textarea id="skills" name="skills"></textarea>
+            </div>
+        </form>
     </div>
-    <div class="section">
-        <h2>Stunts</h2>
-        <input id="stuntsInput" type="text" />
-        <button onclick="addStunt()">Submit</button>
-        <p id="stuntsOutput"></p>
-    </div>
-        <div class="section">
-        <h2>Refresh</h2>
-        <input id="refreshInput" type="text" />
-        <button onclick="printInput('refreshInput', 'refreshOutput')">Submit</button>
-        <p id="refreshOutput"></p>
-    </div>
-    <div class="section">
-        <h2>Fate Points</h2>
-        <input id="fatePointsInput" type="text" />
-        <button onclick="printInput('fatePointsInput', 'fatePointsOutput')">Submit</button>
-        <p id="fatePointsOutput"></p>
-    </div>
-    <div class="section">
-        <h2>Vitals</h2>
-        <h3>Physical Stress</h3>
-        <input id="physicalStressInput" type="text" />
-        <button onclick="printInput('physicalStressInput', 'physicalStressOutput')">Submit</button>
-        <p id="physicalStressOutput"></p>
-        <h3>Mental Stress</h3>
-        <input id="mentalStressInput" type="text" />
-        <button onclick="printInput('mentalStressInput', 'mentalStressOutput')">Submit</button>
-        <p id="mentalStressOutput"></p>
-        <h3>Consequences</h3>
-        <input id="consequencesInput" type="text" />
-        <button onclick="printInput('consequencesInput', 'consequencesOutput')">Submit</button>
-        <p id="consequencesOutput"></p>
-    </div>
-</div>
+
+    <script src="script.js"></script>
 </body>
 </html>
