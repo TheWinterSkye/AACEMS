@@ -37,32 +37,9 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-/* Additional CSS for new elements */
-#character-pic {
-    width: 100%; /* Or any width you'd like */
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-#pic-form {
-    margin-bottom: 10px;
-}
-
-#pic-form input[type="text"] {
-    margin-bottom: 10px;
-}
-
-#pic-form button {
-    background-color: #7289DA;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-#pic-form button:hover {
-    background-color: #677BC4;
+#characterImage {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }
