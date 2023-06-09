@@ -1,9 +1,9 @@
 body {
     background: url('https://cdn.discordapp.com/attachments/1114588752099160154/1116167767322800199/OIG.png') no-repeat center center fixed; 
-    background-size: 80% auto;
+    background-size: 80% auto; /* Adjust this value to get the desired zoom level */
     color: #ddd;
     font-family: 'Courier New', monospace;
-    background-color: #000;
+    background-color: #000; /* Add a black background color to fill in areas where the image doesn't cover */
 }
 
 .container {
@@ -13,19 +13,19 @@ body {
     margin: 0 auto;
     width: 80%;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Add a blur to give a more blended and less boxy feel */
 }
 
 .section {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6); /* Lower the opacity to blend in more with the background */
     padding: 20px;
     border: 2px solid #888;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Add a shadow to provide a subtle 3D effect */
 }
 
 .section h2, .section h3 {
-    text-shadow: 2px 2px 2px #000;
+    text-shadow: 2px 2px 2px #000; /* Increase shadow to give a more retro VHS feel */
 }
 
 .section input {
@@ -34,7 +34,7 @@ body {
     background: rgba(255, 255, 255, 0.8);
     border: none;
     padding: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Add a shadow to the input fields as well */
 }
 
 #characterImage {
@@ -44,8 +44,7 @@ body {
     height: 300px; /* adjust as needed */
 }
 
-#nameOutput, #pronounOutput, #highConceptOutput, #skillsOutput, #stuntsOutput, #refreshOutput, #fatePointsOutput, #physicalStressOutput, #mentalStressOutput, #consequencesOutput {
+input[type="text"], button, p {
     color: yellow;
     text-shadow: 2px 2px red;
 }
-
