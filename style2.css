@@ -1,51 +1,44 @@
 body {
-    background: url('https://cdn.discordapp.com/attachments/1114588752099160154/1116167767322800199/OIG.png') no-repeat center center fixed; 
-    background-size: 80% auto; /* Adjust this value to get the desired zoom level */
-    color: #ddd;
-    font-family: 'Courier New', monospace;
-    background-color: #000; /* Add a black background color to fill in areas where the image doesn't cover */
+    background-image: url('background.png');
+    background-size: cover;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    padding: 20px;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+    max-width: 800px;
     margin: 0 auto;
-    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
     border-radius: 15px;
-    backdrop-filter: blur(10px); /* Add a blur to give a more blended and less boxy feel */
+}
+
+header {
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 2px 2px #ff0000;
 }
 
 .section {
-    background-color: rgba(0, 0, 0, 0.6); /* Lower the opacity to blend in more with the background */
-    padding: 20px;
-    border: 2px solid #888;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Add a shadow to provide a subtle 3D effect */
+    margin-bottom: 20px;
 }
 
-.section h2, .section h3 {
-    text-shadow: 2px 2px 2px #000; /* Increase shadow to give a more retro VHS feel */
+.section h2 {
+    font-size: 1.5em;
+    color: #ff0000;
+    text-decoration: underline;
 }
 
-.section input {
+.section label {
+    display: block;
+    margin-top: 10px;
+}
+
+.section input[type="text"],
+.section input[type="number"],
+.section textarea {
     width: 100%;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
     padding: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Add a shadow to the input fields as well */
-}
-
-#characterImage {
-    object-fit: cover;
-    border-radius: 10px;
-    width: 300px; /* adjust as needed */
-    height: 300px; /* adjust as needed */
-}
-
-.output {
-    color: yellow;
-    text-shadow: 2px 2px 2px red;
-    font-weight: bold;
+    color: #000000;
 }
