@@ -1,5 +1,10 @@
-document.getElementById('pic-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Stop the form from submitting normally
-    var url = document.getElementById('pic-url').value;
-    document.getElementById('character-pic').src = url;
-});
+// script.js
+function updateImage() {
+    var url = document.getElementById('imageURL').value;
+    var img = document.getElementById('characterImage');
+
+    // Check if the URL is valid
+    if(url.trim() !== '') {
+        img.src = url;
+    }
+}
