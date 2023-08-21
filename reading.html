@@ -1,0 +1,32 @@
+</head>
+
+<body>
+
+<input type="text" id="input">
+
+<button onclick="displayText()">Display Text</button>
+<button onclick="clearInput()">Clear Input</button>
+<button onclick="selectText()">Select Output Text</button> 
+
+<div id="output"></div>
+
+<script>
+let outputText = '';
+
+function displayText() {
+  outputText = document.getElementById('input').value;
+  document.getElementById('output').innerHTML = outputText; 
+}
+
+function clearInput() {
+  document.getElementById('input').value = '';
+}
+
+function selectText() {
+  document.getElementById('output').focus();
+  document.getSelection().selectAllChildren(document.getElementById('output'));
+}
+</script>
+
+</body>
+</html>
